@@ -18,17 +18,17 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist",
-            "index": "src/index.server.view.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
+            "index": "src/modules/app/server/views/index.server.view.html",
+            "main": "src/modules/app/client/main.ts",
+            "polyfills": "src/modules/app/client/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "src/modules/app/client/img/brand/favicon.ico",
+              "src/modules/app/client/assets"
             ],
             "styles": [
-              "src/styles.less"
+              "src/modules/app/client/styles.less"
             ],
             "scripts": []
           },
@@ -36,8 +36,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "replace": "src/modules/app/client/environments/environment.ts",
+                  "with": "src/modules/app/client/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -83,7 +83,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
+            "main": "src/modules/app/client/test.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",

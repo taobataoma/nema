@@ -6,10 +6,10 @@ module.exports = {
   server: {
     allJS: ['server.js', 'config/**/*.js', 'src/modules/*/server/**/*.js'],
     models: [
-      'src/modules/core/server/models/**/*.js',
+      'src/modules/app/server/models/**/*.js',
       'src/modules/*/server/models/**/*.js'
     ],
-    routes: ['src/modules/!(core)/server/routes/**/*.js', 'src/modules/core/server/routes/**/*.js'],
+    routes: ['src/modules/!(app)/server/routes/**/*.js', 'src/modules/app/server/routes/**/*.js'],
     sockets: ['src/modules/*/server/sockets/**/*.js'],
     config: ['src/modules/*/server/config/*.js'],
     policies: ['src/modules/*/server/policies/*.js'],
