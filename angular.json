@@ -84,15 +84,15 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "src/modules/app/client/test.ts",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": "src/modules/app/client/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "src/modules/app/client/img/brand/favicon.ico",
+              "src/modules/app/client/assets"
             ],
             "styles": [
-              "src/styles.less"
+              "src/modules/app/client/styles.less"
             ],
             "scripts": []
           }
