@@ -19,8 +19,8 @@
           "options": {
             "outputPath": "dist",
             "index": "src/modules/app/server/views/index.server.view.html",
-            "main": "src/modules/app/client/main.ts",
-            "polyfills": "src/modules/app/client/polyfills.ts",
+            "main": "src/modules/main.ts",
+            "polyfills": "src/modules/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
@@ -28,7 +28,7 @@
               "src/modules/app/client/assets"
             ],
             "styles": [
-              "src/modules/app/client/styles.less"
+              "src/modules/styles.less"
             ],
             "scripts": []
           },
@@ -83,8 +83,8 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/modules/app/client/test.ts",
-            "polyfills": "src/modules/app/client/polyfills.ts",
+            "main": "src/modules/test.ts",
+            "polyfills": "src/modules/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": [
@@ -92,7 +92,7 @@
               "src/modules/app/client/assets"
             ],
             "styles": [
-              "src/modules/app/client/styles.less"
+              "src/modules/styles.less"
             ],
             "scripts": []
           }

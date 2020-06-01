@@ -8,7 +8,7 @@ module.exports = function (application) {
   application.route('/server-error').get(app.renderServerError);
 
   // Return a 404 for all undefined api, module or lib routes
-  application.route('/:url(api|mapi|modules|lib)/*').get(app.renderNotFound);
+  application.route('/:url(api|mapi|src|lib)/*').get(app.renderNotFound);
 
   // Define application route
   application.route('/*').get(app.renderIndex);

@@ -8,11 +8,12 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <app-root></app-root>
-  <!--Embedding The User Object-->
-  <script type="text/javascript">
-    var user = {{{ user }}};
-    var globalConfig = {{{ globalConfig }}};
-  </script>
+<app-root>
+  <section class="content">
+    <section class="container-fluid">
+      {{{block "content"}}}
+    </section>
+  </section>
+</app-root>
 </body>
 </html>
