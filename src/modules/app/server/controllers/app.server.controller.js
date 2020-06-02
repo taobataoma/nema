@@ -28,7 +28,7 @@ exports.renderIndex = function (req, res) {
 
   res.render('dist/index', {
     user: JSON.stringify(safeUserObject),
-    globalConfig: JSON.stringify(req.globalConfig)
+    globalConfig: JSON.stringify(req.globalConfig || null)
   });
 };
 

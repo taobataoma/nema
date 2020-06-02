@@ -1,16 +1,47 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app/client/components/app-routing.module';
+import { AppRoutingModule } from './app/client/routes/app-routing.module';
+import { UserRoutingModule} from './user/client/routes/user-routing.module';
 import { AppComponent } from './app/client/components/app.component';
+import { SigninComponent } from './user/client/components/signin/signin.component';
+import { SignupComponent } from './user/client/components/signup/signup.component';
+import { TopBarComponent } from './app/client/components/top-bar/top-bar.component';
+import { HomeComponent } from './app/client/components/home/home.component';
+import { FooterComponent } from './app/client/components/footer/footer.component';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SigninComponent,
+    SignupComponent,
+    TopBarComponent,
+    HomeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    UserRoutingModule,
+    NzButtonModule,
+    NzGridModule,
+    NzFormModule,
+    NzInputModule,
+    NzIconModule,
+    NzCheckboxModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

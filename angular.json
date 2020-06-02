@@ -25,10 +25,16 @@
             "aot": true,
             "assets": [
               "src/modules/app/client/img/brand/favicon.ico",
-              "src/modules/app/client/assets"
+              "src/modules/app/client/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
+              }
             ],
             "styles": [
-              "src/modules/styles.less"
+              "src/modules/styles.less",
+              "node_modules/ng-zorro-antd/ng-zorro-antd.min.css"
             ],
             "scripts": []
           },
@@ -123,6 +129,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "nema"
 }
