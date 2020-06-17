@@ -23,12 +23,17 @@ export class SigninComponent implements OnInit {
   }
 
   onSubmitForm(signinData): void {
-    console.log(signinData);
-
     // tslint:disable-next-line:forin
     for (const i in this.signinForm.controls) {
       this.signinForm.controls[i].markAsDirty();
       this.signinForm.controls[i].updateValueAndValidity();
     }
+
+    if (!this.signinForm.valid) {
+      return;
+    }
+
+    console.log(signinData);
+
   }
 }
