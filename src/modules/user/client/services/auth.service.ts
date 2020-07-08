@@ -67,6 +67,28 @@ export class AuthService {
       );
   }
 
+  /** POST: signin a user */
+  signin(user, cbOk = null, cbError = null, cbComplate = null) {
+    return this.http.post(this.apiSignin, user, httpOptions)
+      .subscribe(
+        data => {
+          if (cbOk) {
+            cbOk(data);
+          }
+        },
+        err => {
+          if (cbError) {
+            cbError(err);
+          }
+        },
+        () => {
+          if (cbComplate) {
+            cbComplate();
+          }
+        }
+      );
+  }
+
   /** DELETE: delete the hero from the server */
   // deleteHero(id: number): Observable<{}> {
   //   const url = `${this.heroesUrl}/${id}`; // DELETE api/heroes/42

@@ -3,6 +3,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {Observable, Subject} from 'rxjs';
 import {AuthService} from '../../services/auth.service';
+import {AuthenticationService} from '../../services/authentication.service';
 import {NzNotificationService} from 'ng-zorro-antd/notification';
 
 @Component({
@@ -13,12 +14,16 @@ import {NzNotificationService} from 'ng-zorro-antd/notification';
 export class SignupComponent implements OnInit {
   signupForm;
 
+  private authenticationService: AuthenticationService;
+
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
     private authService: AuthService,
-    private notification: NzNotificationService
+    private notification: NzNotificationService,
+    authenticationService: AuthenticationService
   ) {
+    this.authenticationService = authenticationService;
     this.signupForm = this.formBuilder.group({
       fullname: [null, [Validators.required]],
       username: [null, [Validators.required]],
@@ -32,6 +37,9 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmitForm(signupData): void {
+    console.log('-= authenticationService.user: ');
+    console.log(this.authenticationService.user);
+
     // tslint:disable-next-line:forin
     for (const i in this.signupForm.controls) {
       this.signupForm.controls[i].markAsDirty();
